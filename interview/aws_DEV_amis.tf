@@ -1,8 +1,8 @@
 
 variable "dns_zone" { default = "Z2NGZGBA62OPC0" }
 variable "domain" { default = "remdevme.com" }
-variable "s3_logs_retention_days" { default = "180" }
-variable "s3_spark_history_retention_days" { default = "365" }
+variable "s3_logs_retention_days" { default = "90" }
+variable "s3_spark_history_retention_days" { default = "730" }
 variable "cwlogs_retention_days" { default = "30" }
 
 
@@ -11,38 +11,65 @@ variable "elb_log_acct_id" { default = "127311923021" }
 #https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html
 variable "redshift_log_acct_id" { default = "193672423079" }
 
+variable "zone_count" { default = "4" }
+
+variable "zones" {
+  default = {
+    zone0 = "us-east-1e"
+    zone1 = "us-east-1b"
+    zone2 = "us-east-1c"
+    zone3 = "us-east-1d"
+  }
+}
+
+variable "cidr_public_blocks" {
+  default = {
+    zone0 = "10.0.128.0/20"
+    zone1 = "10.0.144.0/20"
+    zone2 = "10.0.160.0/20"
+    zone3 = "10.0.176.0/20"
+  }
+}
+
+variable "cidr_blocks" {
+  default = {
+    zone0 = "10.0.0.0/20"
+    zone1 = "10.0.16.0/20"
+    zone2 = "10.0.32.0/20"
+    zone3 = "10.0.48.0/20"
+  }
+}
 
 # sort alphabetically
-variable "admin_ami_id" {default = "ami-01818b048d486487f"}
-variable "datain_ami_id" {default = "ami-0d72113aa9d238dca"}
-variable "driversfarm_ami_id" {default = "ami-08e54b12c0202d027"}
-variable "efsmount_ami_id" {default = "ami-0de082116814b2fc6"}
-variable "elk_ami_id" {default = "ami-01d08562fdc435be5"}
-variable "farm_ami_id" {default = "ami-00c9b4ab10eb9b25b"}
-variable "gis_ami_id" {default = "ami-0ac4a997d850393cd"}
-variable "gitlab_ami_id" {default = "ami-0d49c7487f34af22e"}
-variable "hdfs_ami_id" {default = "ami-09d3b24ed24546872"}
-variable "ingestion_ami_id" {default = "ami-0e763c30a7523527c"}
-variable "jmeter_ami_id" {default = "ami-00dad0a93021ad34c"}
-variable "kafka_ami_id" {default = "ami-032b30ab728469b22"}
-variable "managers_ami_id" {default = "ami-020da826994de9cb5"}
-variable "overpass_ami_id" {default="ami-09f8bac1813932468"}
-variable "secor_ami_id" {default = "ami-0cacb28837d4e2bd7"}
-variable "sysops_ami_id" {default = "ami-0aa9532a5ad1eff63"}
-variable "tableau_ami_id" {default = "ami-09282c950529b8f8c"}
-variable "workflow_ami_id" {default = "ami-0b18d0ab17e20feb2"}
-variable "db_ami_id" {default = "ami-0d28e3ab85ad75778"}
-variable "dbam_ami_id" {default = "ami-0d28e3ab85ad75778"}
-variable "history_server_ami_id" {default = "ami-032519efeb4ca6416"}
 
-variable "tableau_win_desktop_ami_id" {default = "ami-04b071791383eab07"}
+variable "admin_ami_id" {default = "ami-0faec7b5d769bb325"}
+variable "datain_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
+variable "driversfarm_ami_id" {default = "ami-0475945750092f741"}
+variable "efsmount_ami_id" {default = "ami-0d5fde8963d4844db"}
+variable "elk_ami_id" {default = "ami-08ac2a47fc4a37aef"}
+variable "farm_ami_id" {default = "ami-01a051075300f14a1"}
+variable "gis_ami_id" {default = "ami-078df93970df38407"}
+variable "gitlab_ami_id" {default = "ami-03b663c9b5d5a8f2e"}
+variable "hdfs_ami_id" {default = "ami-09bdbf3030ceccdcb"}
+variable "jmeter_ami_id" {default = "ami-032bbb6d7cd08f396"}
+variable "kafka_ami_id" {default = "ami-008d78abe8e032ff9"}
+variable "managers_ami_id" {default = "ami-014f205bd1c1dbbf4"}
+variable "overpass_ami_id" {default = "ami-016ae8446c138a065"}
+variable "secor_ami_id" {default = "ami-021373dad2640d564"}
+variable "sysops_ami_id" {default = "ami-0fd1738b28089a8cd"}
+variable "tableau_ami_id" {default = "ami-037a897ae4fcd1a9e"}
+variable "workflow_ami_id" {default = "ami-00836ae1a88972d24"}
+variable "db_ami_id" {default = "ami-00836ae1a88972d24"}
+variable "dbam_ami_id" {default = "ami-00836ae1a88972d24"}
+variable "ingestion_ami_id" {default = "ami-03894179c2f900828"}
+
+variable "tile_pipeline_ami_id" {default = "ami-0078d710b4a17f3ed"}
 variable "cassandra_ami_id" {default = ""}
 variable "dask_ami_id" {default = ""}
 variable "mesim_ami_id" {default = ""}
 variable "monitoring_ami_id" {default = ""}
-variable "nevo_ami_id" {default = "ami-0d72113aa9d238dca"}
-variable "cdn_ami_id" {default = "ami-0d72113aa9d238dca"}
+variable "nevo_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
+variable "cdn_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
 variable "vault_ami_id" {default = ""}
 
 variable "pypi_security_group_id" { default = "sg-06d876792a53409f6" }
-variable "map_updator_ami_id" {default = "ami-0d28e3ab85ad75778"}
