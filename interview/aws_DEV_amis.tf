@@ -45,7 +45,7 @@ variable "cidr_blocks" {
 variable "admin_ami_id" {default = "ami-0faec7b5d769bb325"}
 variable "datain_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
 variable "driversfarm_ami_id" {default = "ami-0475945750092f741"}
-variable "efsmount_ami_id" {default = "ami-0d5fde8963d4844db"}
+variable "efsmount_ami_id" {default = "ami-05e9f6543db72f28a"}
 variable "elk_ami_id" {default = "ami-08ac2a47fc4a37aef"}
 variable "farm_ami_id" {default = "ami-01a051075300f14a1"}
 variable "gis_ami_id" {default = "ami-078df93970df38407"}
@@ -70,6 +70,6 @@ variable "mesim_ami_id" {default = "ami-0588b358b569c45e6"}
 variable "monitoring_ami_id" {default = "ami-05c2357eff6f75bb8"}
 variable "nevo_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
 variable "cdn_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
-variable "vault_ami_id" {default = ""}
+variable "vault_ami_id" {default = "ami-05ce7920a6860f741"}
 
 variable "pypi_security_group_id" { default = "sg-06d876792a53409f6" }
