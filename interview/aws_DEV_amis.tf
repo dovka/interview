@@ -64,10 +64,10 @@ variable "dbam_ami_id" {default = "ami-00836ae1a88972d24"}
 variable "ingestion_ami_id" {default = "ami-03894179c2f900828"}
 
 variable "tile_pipeline_ami_id" {default = "ami-0078d710b4a17f3ed"}
-variable "cassandra_ami_id" {default = ""}
-variable "dask_ami_id" {default = ""}
-variable "mesim_ami_id" {default = ""}
-variable "monitoring_ami_id" {default = ""}
+variable "cassandra_ami_id" {default = "ami-057d3e790b081b0da"}
+variable "dask_ami_id" {default = "ami-0588a5b5fc9fcbec0"}
+variable "mesim_ami_id" {default = "ami-0588b358b569c45e6"}
+variable "monitoring_ami_id" {default = "ami-05c2357eff6f75bb8"}
 variable "nevo_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
 variable "cdn_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
 variable "vault_ami_id" {default = ""}
