@@ -66,10 +66,10 @@ variable "ingestion_ami_id" {default = "ami-03894179c2f900828"}
 variable "tile_pipeline_ami_id" {default = "ami-0078d710b4a17f3ed"}
 variable "cassandra_ami_id" {default = "ami-05287810981cf29f6"}
 variable "dask_ami_id" {default = "ami-053da6ed96a1d3f23"}
-variable "mesim_ami_id" {default = ""}
-variable "monitoring_ami_id" {default = ""}
+variable "mesim_ami_id" {default = "ami-055c339273f16e603"}
+variable "monitoring_ami_id" {default = "ami-0575bde8e66b84ddd"}
 variable "nevo_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
 variable "cdn_ami_id" {default = "ami-0cedc5f9476ae9a3f"}
-variable "vault_ami_id" {default = ""}
+variable "vault_ami_id" {default = "ami-057a92605217f2c55"}
 
 variable "pypi_security_group_id" { default = "sg-06d876792a53409f6" }
